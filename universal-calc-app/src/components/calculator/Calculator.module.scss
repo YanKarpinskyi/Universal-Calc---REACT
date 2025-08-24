@@ -1,0 +1,91 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.heading {
+  text-align: center;
+  padding-top: 3%;
+  font-weight: 600;
+  font-size: 50px;
+}
+        
+.main_calc__container {
+  @include flex-container(565px, 80%, 0.3vw);
+  order: 1;
+  margin: 0 39%;
+}
+
+.main__container {
+  @include grid-container(repeat(4, 90px), repeat(6, 90px));
+  height: 565px;
+}
+
+.input, .result {
+  font-weight: 400;
+  font-size: 32pt;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+.main_calc__container .btn {
+  @include ordinary-buttons($main-calc-btn-bg, $main-calc-btn-borderColor);
+}
+
+.main_calc__container .btn__cancel,
+.main_calc__container .btn__dot {
+  background-color: darken($main-calc-btn-bg, 10%);
+}
+
+.main_calc__container .btn:hover {
+  background-color: darken($main-calc-btn-bg, 20%);
+}
+
+.main_calc__container .btn:active {
+  background-color: darken($main-calc-btn-bg, 30%);
+}
+
+.main_calc__container .btn__more.active {
+  background-color: darken($main-calc-btn-bg, 30%);
+}
+
+.result {
+  grid-column: span 4;
+  text-align: end;
+  width: 100%;
+}
+
+.btn__result, .btn__more, .btn__cancel, .btn__dot, .btn__convert {
+  font-weight: 400;
+}
+
+.btn__result {
+  grid-column: span 4;
+  width: 100%;
+}
+
+.more__container {
+  @include flex-container(565px, 90px, 5px);
+  align-items: center;
+  position: relative;
+  order: 2;
+}
+
+.btn__more {
+  height: 100%;
+  width: 60px;
+  flex-shrink: 0;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  letter-spacing: -1rem;
+}
+
+.more__operations {
+  position: absolute;
+  top: 0;
+  left: 67%; 
+  display: none;
+  gap: 5px;
+  grid-template-columns: repeat(3, 90px);
+  grid-template-rows: repeat(6, 90px);
+  padding: 5px;
+  z-index: 10;
+}

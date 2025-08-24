@@ -1,0 +1,32 @@
+@mixin grid-container ($columns, $rows) {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+}
+
+@mixin flex-container ($h: initial, $w: initial, $gap: 1em) {
+  height: $h;
+  width: $w;
+  gap: $gap;
+  display: flex;
+}
+
+@mixin ordinary-buttons ($bg, $borderColor) {
+  background-color: $bg;
+  border: 4px solid $borderColor;
+  border-radius: 5px;
+}
+
+@mixin switch-buttons ($color, $bg, $border-color) {
+  width: 100%;
+  height: 40px;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14pt;
+  color: $color;
+  background-color: $bg;
+  border: 3px solid $border-color;
+  border-radius: 5px;
+}
