@@ -1,0 +1,44 @@
+@import "./colors";
+@import "./mixins";
+@import "./variables";
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('fonts/kanit/Kanit-Medium.woff2') format('woff2'),
+         url('fonts/kanit/Kanit-Medium.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('fonts/kanit/Kanit-Regular.woff2') format('woff2'),
+         url('fonts/kanit/Kanit-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('fonts/kanit/Kanit-SemiBold.woff2') format('woff2'),
+         url('fonts/kanit/Kanit-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    // background-image: linear-gradient(#DFEBED, #7D8CD5);
+}

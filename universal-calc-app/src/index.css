@@ -1,13 +1,36 @@
-body {
+@font-face {
+  font-family: "Kanit";
+  src: url("fonts/kanit/Kanit-Medium.woff2") format("woff2"), url("fonts/kanit/Kanit-Medium.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("fonts/kanit/Kanit-Regular.woff2") format("woff2"), url("fonts/kanit/Kanit-Regular.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("fonts/kanit/Kanit-SemiBold.woff2") format("woff2"), url("fonts/kanit/Kanit-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body {
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+body {
+  font-family: "Kanit", sans-serif;
+  background-image: linear-gradient(#DFEBED, #7D8CD5);
+}
+
+/*# sourceMappingURL=index.css.map */

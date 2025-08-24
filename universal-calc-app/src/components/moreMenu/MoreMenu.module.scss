@@ -1,0 +1,18 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.more__operations {
+    position: absolute;
+    top: 0;
+    left: 67%; 
+    display: none;
+    gap: 5px;
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(6, 90px);
+    padding: 5px;
+    z-index: 10;
+}
+
+.more__operations.more__operations--visible {
+    display: grid;
+}

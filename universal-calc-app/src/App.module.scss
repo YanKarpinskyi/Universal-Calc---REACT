@@ -1,0 +1,356 @@
+@import './styles/mixins';
+@import './styles/colors';
+
+.switch__container {
+    width: 300px;
+    flex-shrink: 0;
+    order: 0;
+    margin-top: 15%;
+    margin-left: 10%;
+    position: absolute;
+}
+
+// .switch__btn {
+//     @include switch-buttons($switch-btn-color, $switch-btn-bg, $switch-btn-borderColor);
+// }
+
+// .switch__btn:hover {
+//     background-color: darken($switch-btn-bg, 15%);
+// }
+
+// .switch__btnActive {
+//     background-color: darken($switch-btn-bg, 15%);
+// }
+
+.signs__container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.design__signs {
+    position: absolute;
+    transform-style: preserve-3d;
+    width: 130px;
+    margin-top: 7%;
+}
+
+@keyframes flip{
+    0% {transform: rotateY(0deg);}
+    100% {transform: rotateY(360deg);}
+}
+
+.animate {
+    animation: flip 2s ease forwards;
+}
+
+.calcTopLeft {
+    left: 20%;
+}
+
+.calcTopRight {
+    right: 20%;  
+}
+
+.calcBottomLeft {
+    left: 20%;
+    bottom: 10%;
+}
+
+.calcBottomRight {
+    right: 20%; 
+    bottom: 10%; 
+}
+
+
+
+
+
+
+
+
+
+.active {
+    display: block;
+}
+
+.disabled {
+    display: none;
+}
+
+
+
+// .wrapper .main_calc__container.disabled,
+// .wrapper .unit_conv__container.disabled,
+// .wrapper .curr_conv__container.disabled {
+//     display: none;
+// }
+
+// #more__measurements.more__measurements--visible {
+//     display: flex;
+// }
+
+// #more__operations.more__operations--visible {
+//     display: grid;
+// }
+
+// #heading {
+//     text-align: center;
+//     margin-top: 7%;
+//     font-weight: 600;
+//     font-size: 50px;
+// }
+
+// .wrapper {
+//     @include flex-container(70vh, 100%, 5px);
+//     align-items: center;
+// }
+
+// .main_calc__container {
+//     @include flex-container(565px, 80%, 0.3vw);
+//     order: 1;
+//     margin: 0 39%;
+// }
+
+// .main__container {
+//     @include grid-container(repeat(4, 90px), repeat(6, 90px));
+//     height: 565px;
+// }
+
+// input {
+//     font-weight: 400;
+//     font-size: 32pt;
+//     border: 2px solid black;
+//     border-radius: 3px;
+// }
+
+// label {
+//     font-size: 21pt;
+//     font-weight: 600;
+// }
+
+// #result {
+//     grid-column: span 4;
+//     text-align: end;
+//     width: 100%;
+// }
+
+// .btn {
+//     width: 90px;
+//     height: 90px;
+//     cursor: pointer;
+//     user-select: none;
+//     font-family: 'Kanit', sans-serif;
+//     font-weight: 300;
+//     font-size: 26pt;
+// }
+
+// .main_calc__container .btn {
+//     @include ordinary-buttons($main-calc-btn-bg, $main-calc-btn-borderColor);
+// }
+
+// .main_calc__container .btn__cancel,
+// .main_calc__container .btn__dot {
+//     background-color: darken($main-calc-btn-bg, 10%);
+// }
+
+// .main_calc__container .btn:hover {
+//     background-color: darken($main-calc-btn-bg, 20%);
+// }
+
+// .main_calc__container .btn:active {
+//     background-color: darken($main-calc-btn-bg, 30%);
+// }
+
+// .main_calc__container .btn__more.active {
+//     background-color: darken($main-calc-btn-bg, 30%);
+// }
+
+// .btn__result, .btn__more, .btn__cancel, .btn__dot, .btn__convert {
+//     font-weight: 600;
+// }
+
+// .btn__result {
+//     grid-column: span 4;
+//     width: 100%;
+// }
+
+// .more__container {
+//     @include flex-container(565px, 90px, 5px);
+//     align-items: center;
+//     position: relative;
+//     order: 2;
+// }
+
+// .btn__more {
+//     height: 100%;
+//     width: 60px;
+//     flex-shrink: 0;
+//     writing-mode: vertical-lr;
+//     text-orientation: upright;
+// }
+
+// #more__operations {
+//     position: absolute;
+//     top: 0;
+//     left: 67%; 
+//     display: none;
+//     gap: 5px;
+//     grid-template-columns: repeat(3, 90px);
+//     grid-template-rows: repeat(6, 90px);
+//     padding: 5px;
+//     z-index: 10;
+// }
+
+// .switch__container {
+//     width: 300px;
+//     flex-shrink: 0;
+//     order: 0;
+//     margin-top: 7%;
+//     margin-left: 10%;
+//     position: absolute;
+// }
+
+// .unit_conv__container .btn {
+//     @include ordinary-buttons($conv-btn-bg, $unit-conv-btn-borderColor);
+// }
+
+// .unit_conv__container .btn__cancel {
+//     background-color: darken($conv-btn-bg, 10%);
+// }
+
+// .unit_conv__container .btn:hover {
+//     background-color: darken($conv-btn-bg, 20%);
+// }
+
+// .unit_conv__container .btn:active {
+//     background-color: darken($conv-btn-bg, 30%);
+// }
+
+// .unit_conv__container .btn__more.active {
+//     background-color: darken($conv-btn-bg, 30%);
+// }
+
+// .unit_inputs__container {
+//     width: 572px;
+// }
+
+// .unit_inputs__container > p{
+//     text-align: center;
+//     font-weight: 800;
+//     font-size: 36pt;
+//     line-height: 0.7;
+// }
+
+// .unit_conv__container {
+//     width: auto;
+//     margin: 0 35%;
+// }
+
+// .unit_conv__values {
+//     @include flex-container($gap: 5px);
+// }
+
+// .unit_conv__values .btn__more {
+//     margin-top: 90px;
+// }
+
+// .unit__section {
+//     display: none;
+//     gap: 5px;
+// }
+
+// #more__measurements {
+//     display: none;
+//     gap: 5px;
+//     margin-top: -50px;
+// }
+
+// #area__section {
+//     @include grid-container(repeat(2, 90px), 40px repeat(4, 90px));
+// }
+
+// #temper__section {
+//     @include grid-container(repeat(3, 90px), 40px 90px);
+// }
+
+// #volume__section {
+//     @include grid-container(repeat(2, 90px), 40px repeat(6, 90px));
+// }
+
+// #length__section {
+//     @include grid-container(repeat(2, 90px), 40px repeat(4, 90px));
+// }
+
+// #weight__section {
+//     @include grid-container(repeat(2, 90px), 40px repeat(6, 90px));
+// }
+
+// .unit__input {
+//     width: 100%;
+//     font-size: 22pt;
+// }
+
+// .input__container {
+//     @include flex-container($gap: 7px);
+// }
+
+// #second__unit {
+//     margin-bottom: 17px;
+// }
+
+// .unit__heading {
+//     grid-column: span 2;
+//     text-align: center;
+// }
+
+// #temper__heading {
+//     grid-column: span 3;
+// }
+
+// .unit__section > .btn__cancel, .btn__convert, .btn__reverse {
+//     grid-column: span 2;
+//     width: auto;
+// }
+
+// .curr_conv__container {
+//     @include flex-container($gap: 20px);
+//     flex-direction: column;
+//     margin: 0 35%;
+// }
+
+// .curr_conv__container .btn {
+//     @include ordinary-buttons($conv-btn-bg, $curr-conv-btn-borderColor);
+// }
+
+// .curr_conv__container .btn__cancel {
+//     background-color: darken($conv-btn-bg, 10%);
+// }
+
+// .curr_conv__container .btn:hover {
+//     background-color: darken($conv-btn-bg, 20%);
+// }
+
+// .curr_conv__container .btn:active {
+//     background-color: darken($conv-btn-bg, 30%);
+// }
+
+// .curr_conv__values {
+//     @include flex-container($gap: 5px);
+// }
+
+// .curr__section {
+//     @include flex-container($gap: 3px);
+//     flex-direction: column;
+//     align-items: center;
+// }
+
+// .curr_conv__manage {
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+// }
+
+// #curr_conv__cancel, #curr_conv__convert, #curr_conv__reverse {
+//     width: 180px;
+// }
