@@ -2,86 +2,86 @@
 @import '../../styles/mixins';
 
 .heading {
-    text-align: center;
-    padding-top: 3%;
-    font-weight: 600;
-    font-size: 50px;
+  text-align: center;
+  padding-top: 3%;
+  font-weight: 600;
+  font-size: 50px;
 }
 
 input {
-    font-weight: 400;
-    font-size: 32pt;
-    border: 2px solid black;
-    border-radius: 3px;
+  font-weight: 400;
+  font-size: 32pt;
+  border: 2px solid black;
+  border-radius: 3px;
 }
 
 label {
-    font-size: 21pt;
-    font-weight: 600;
+  font-size: 21pt;
+  font-weight: 600;
 }
 
 .unit_inputs__container > p {
-    text-align: center;
-    font-weight: 600;
-    font-size: 40pt;
-    line-height: 0.7;
+  text-align: center;
+  font-weight: 600;
+  font-size: 40pt;
+  line-height: 0.7;
 }
 
 .btn {
-    width: 90px;
-    height: 90px;
-    cursor: pointer;
-    user-select: none;
-    font-family: 'Kanit', sans-serif;
-    font-weight: 300;
-    font-size: 26pt;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  user-select: none;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+  font-size: 26pt;
 }
 
 .curr_conv__container {
-    @include flex-container($gap: 20px);
-    flex-direction: column;
-    margin: 0 35%;
+  @include flex-container($gap: 20px);
+  flex-direction: column;
+  margin: 0 35%;
 }
 
 .curr_conv__container .btn {
-    @include ordinary-buttons($conv-btn-bg, $curr-conv-btn-borderColor);
+  @include ordinary-buttons($conv-btn-bg, $curr-conv-btn-borderColor);
 }
 
 .curr_conv__container .btn__cancel {
-    background-color: darken($conv-btn-bg, 10%);
+  background-color: darken($conv-btn-bg, 10%);
 }
 
 .curr_conv__container .btn:hover {
-    background-color: darken($conv-btn-bg, 20%);
+  background-color: darken($conv-btn-bg, 20%);
 }
 
 .curr_conv__container .btn:active {
-    background-color: darken($conv-btn-bg, 30%);
+  background-color: darken($conv-btn-bg, 30%);
 }
 
 .curr_conv__values {
-    @include flex-container($gap: 5px);
+  @include flex-container($gap: 5px);
 }
 
 .curr__section {
-    @include flex-container($gap: 3px);
-    flex-direction: column;
-    align-items: center;
+  @include flex-container($gap: 3px);
+  flex-direction: column;
+  align-items: center;
 }
 
 .curr_conv__manage {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    > .btn__result,
-    > .btn__cancel,
-    > .btn__convert {
-        font-weight: 600;
-    }
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  > .btn__result,
+  > .btn__cancel,
+  > .btn__convert {
+    font-weight: 600;
+  }
 }
 
 .curr_conv__manage .btn__cancel,
 .curr_conv__manage .btn__convert,
 .curr_conv__manage .btn__reverse {
-    width: 180px;
+  width: 180px;
 }

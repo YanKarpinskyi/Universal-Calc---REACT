@@ -2,25 +2,25 @@
 @import '../../styles/mixins';
 
 .btn {
-    width: 90px;
-    height: 90px;
-    cursor: pointer;
-    user-select: none;
-    font-family: 'Kanit', sans-serif;
-    font-weight: 300;
-    font-size: 26pt;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  user-select: none;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+  font-size: 26pt;
 }
 
 .switch__btn {
-    @include switch-buttons($switch-btn-color, $switch-btn-bg, $switch-btn-borderColor);
-    font-weight: 600;
-    font-size: 17pt;
+  @include switch-buttons($switch-btn-color, $switch-btn-bg, $switch-btn-borderColor);
+  font-weight: 600;
+  font-size: 17pt;
 }
 
 .switch__btn:hover {
-    background-color: darken($switch-btn-bg, 15%);
+  background-color: darken($switch-btn-bg, 15%);
 }
 
 .switch__btnActive {
-    background-color: darken($switch-btn-bg, 15%);
+  background-color: darken($switch-btn-bg, 15%);
 }
