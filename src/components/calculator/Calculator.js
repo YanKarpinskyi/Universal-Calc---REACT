@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef, useMemo,useCallback } from 'react';
 import Button from '../button/Button';
 import MoreMenu from '../moreMenu/MoreMenu';
 import calcStyles from './Calculator.module.scss';
@@ -17,12 +17,12 @@ function Calculator({ heading }) {
     stateRef.current = { rawInput, firstNumber, operator };
   }, [rawInput, firstNumber, operator])
 
-  const formatResult = (num, decimals = 2) => {
+  const formatResult = useCallback((num, decimals = 2) => {
     const fixedNum = num.toFixed(decimals);
     let [intPart, decimalPart] = fixedNum.split('.');
     intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     return decimalPart ? `${intPart}.${decimalPart}` : intPart;
-  };
+  }, []);
 
   const formatInput = (input) => {
     let [intPart, decimalPart] = input.split('.');
@@ -31,24 +31,24 @@ function Calculator({ heading }) {
     return decimalPart !== undefined ? `${intPart}.${decimalPart}` : intPart;
   };
 
-  const handleDigit = (digit) => {
+  const handleDigit = useCallback((digit) => {
     if (shouldClear) {
       setRawInput('');
       setShouldClear(false);
     }
     if (digit === '0' && rawInput === '0') return;
     setRawInput(rawInput + digit);
-  };
+  }, [rawInput, shouldClear]);
 
-  const handleOperator = (op) => {
+  const handleOperator = useCallback((op) => {
     if (rawInput !== '') {
       setFirstNumber(parseFloat(rawInput.replace(/\s/g, '')));
       setOperator(op);
       setRawInput('');
     }
-  };
+  }, [rawInput]);
 
-  const handleResult = () => {
+  const handleResult = useCallback(() => {
     if (rawInput !== '' && firstNumber !== null && operator !== null) {
       const second = parseFloat(rawInput.replace(/\s/g, ''));
       let result = 0;
@@ -79,17 +79,17 @@ function Calculator({ heading }) {
       setShouldClear(true);
       inputRef.current?.focus();
     }
-  };
+  }, [rawInput, firstNumber, operator]);
 
-  const handleClear = () => {
+  const handleClear = useCallback(() => {
     setRawInput('');
     setFirstNumber(null);
     setOperator(null);
     setShouldClear(false);
     inputRef.current?.focus();
-  };
+  }, []);
 
-  const handleUnary = (fn, validate = () => true) => () => {
+  const handleUnary = useCallback((fn, validate = () => true) => () => {
     const val = parseFloat(rawInput.replace(/\s/g, ''));
     if (rawInput === '' || rawInput === 'Error' || isNaN(val) || !validate(val)) {
       setRawInput('Error');
@@ -99,7 +99,7 @@ function Calculator({ heading }) {
     setFirstNumber(null);
     setOperator(null);
     setShouldClear(true);
-  };
+  }, [rawInput, formatResult]);
 
   const factorial = (n) => {
     if (n < 0 || !Number.isInteger(n)) return NaN;
