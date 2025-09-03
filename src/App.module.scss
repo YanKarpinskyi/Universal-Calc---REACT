@@ -1,6 +1,11 @@
 @import './styles/mixins';
 @import './styles/colors';
 
+.app__container {
+  min-height: 100vh;
+  position: relative;
+}
+
 .switch__container {
   width: 300px;
   flex-shrink: 0;

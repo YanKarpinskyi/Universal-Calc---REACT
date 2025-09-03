@@ -49,6 +49,13 @@ function App() {
     currency: 'linear-gradient(#BFD9D0, #98A77D)'
   }), []);
 
+  useEffect(() => {
+    document.body.style.backgroundImage = bodyBg[mode];
+    return () => {
+      document.body.style.backgroundImage = '';
+    };
+  }, [mode, bodyBg]);
+
   const components = {
     calc: <Calculator heading='Universal Calc' />,
     currency: <CurrencyConverter heading='Currency Converter' />,
@@ -56,7 +63,7 @@ function App() {
   };
 
   return (
-    <div style={{backgroundImage: bodyBg[mode], height: '100vh'}}>
+    <div className={appStyles.app__container}>
       <div className='signs__container'>
         {signs[mode].map(sign => (
           <img
