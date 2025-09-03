@@ -176,7 +176,7 @@ function Calculator({ heading }) {
     { label: 'asin', onClick: handleUnary((x) => Math.asin(x)) },
     { label: 'acos', onClick: handleUnary((x) => Math.acos(x)) },
     { label: 'atan', onClick: handleUnary((x) => Math.atan(x)) },
-  ], [handleUnary]);
+  ], [handleUnary, handleOperator]);
 
   return (
     <>
