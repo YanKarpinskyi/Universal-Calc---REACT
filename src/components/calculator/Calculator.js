@@ -128,7 +128,7 @@ function Calculator({ heading }) {
     };
     document.addEventListener('keydown', handleKeydown);
     return () => document.removeEventListener('keydown', handleKeydown);
-  }, [rawInput, firstNumber, operator, shouldClear]);
+  }, [rawInput, firstNumber, operator, shouldClear, handleDigit, handleOperator, handleResult]);
 
   const buttons = useMemo(() => [
     { label: '1', onClick: () => handleDigit('1'), className: calcStyles.btn__num },
@@ -154,7 +154,7 @@ function Calculator({ heading }) {
     { label: '0', onClick: () => handleDigit('0'), className: calcStyles.btn__num },
     { label: 'C', onClick: () => handleClear(), className: calcStyles.btn__cancel },
     { label: '/', onClick: () => handleOperator('/'), className: calcStyles.btn__oper },
-  ], [rawInput, shouldClear]);
+  ], [rawInput, shouldClear, handleDigit, handleOperator]);
 
   const moreOperations = [
     { label: '%', onClick: handleUnary((x) => x /100)},
