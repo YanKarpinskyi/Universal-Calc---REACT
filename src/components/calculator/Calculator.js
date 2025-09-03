@@ -79,7 +79,7 @@ function Calculator({ heading }) {
       setShouldClear(true);
       inputRef.current?.focus();
     }
-  }, [rawInput, firstNumber, operator]);
+  }, [rawInput, firstNumber, operator, formatResult]);
 
   const handleClear = useCallback(() => {
     setRawInput('');
@@ -128,7 +128,7 @@ function Calculator({ heading }) {
     };
     document.addEventListener('keydown', handleKeydown);
     return () => document.removeEventListener('keydown', handleKeydown);
-  }, [rawInput, firstNumber, operator, shouldClear, handleDigit, handleOperator, handleResult]);
+  }, [rawInput, firstNumber, operator, shouldClear, handleDigit, handleOperator, handleResult, handleClear]);
 
   const buttons = useMemo(() => [
     { label: '1', onClick: () => handleDigit('1'), className: calcStyles.btn__num },
@@ -154,9 +154,9 @@ function Calculator({ heading }) {
     { label: '0', onClick: () => handleDigit('0'), className: calcStyles.btn__num },
     { label: 'C', onClick: () => handleClear(), className: calcStyles.btn__cancel },
     { label: '/', onClick: () => handleOperator('/'), className: calcStyles.btn__oper },
-  ], [rawInput, shouldClear, handleDigit, handleOperator]);
+  ], [rawInput, shouldClear, handleDigit, handleOperator, handleClear]);
 
-  const moreOperations = [
+  const moreOperations = useMemo(() => [
     { label: '%', onClick: handleUnary((x) => x /100)},
     { label: '√', onClick: handleUnary((x) => Math.sqrt(x), (x) => x >= 0) },
     { label: '∛', onClick: handleUnary((x) => Math.cbrt(x))},
@@ -176,7 +176,7 @@ function Calculator({ heading }) {
     { label: 'asin', onClick: handleUnary((x) => Math.asin(x)) },
     { label: 'acos', onClick: handleUnary((x) => Math.acos(x)) },
     { label: 'atan', onClick: handleUnary((x) => Math.atan(x)) },
-  ];
+  ], [handleUnary]);
 
   return (
     <>
